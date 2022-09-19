@@ -56,14 +56,6 @@ section {
     font-size: small;
 }
 
-#xyform {
-    
-}
-
-#rform {
-
-}
-
 input:invalid {
     border: 2px dashed red;
 }

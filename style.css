@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+/* TODO ask about cursive font */
+/* fix the blur of background */
+/* make the titles pretty */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-image: url(images/drive_background.webp), url(images/second_gosling_background.png);
+    background-position: top, bottom;
+    background-attachment: fixed;
+    background-color: slategray;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+
+}
+
+header {
+    overflow: hidden;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .6);
+    /* justify-content: center; */
+    height: 128px;
+    background-size: contain;
+}
+
+/* FIXME make font colorful + make font size numeric value */
+.header-info {
+    font-size:large;
+    line-height: 30px;
+    position: absolute;
+    top: 23px;
+    left: 190px;
+}
+
+section {
+    overflow: hidden;
+    margin: 65px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .6);
+    background-size: contain;
+    height: 440px;
+    width: 1300px;
+}
+
+.section-coordinate{
+    margin: 7px;
+    font-size: 17px;
+    text-align: center;   
+    display: block; 
+    
+}
+
+.section-form-r{
+    font-size: small;
+}
+
+#xyform {
+    
+}
+
+#rform {
+
+}
+
+input:invalid {
+    border: 2px dashed red;
+}
+
+input:valid {
+    border: 2px solid black;
+}
+
+.task {
+    bottom: 50px;
+}
+
+form {
+    margin-top: 5%;
+    margin-right: 3%;
+}
+
+.coordinate-table {
+    overflow: hidden;
+    text-align: center;
+    margin: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .6);
+    background-size: contain;
+    height: 400px;
+    width: 900px;
+}
+
+legend {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+
+}
+
+audio {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+/* Do inscription ITMO in retrowave style in the right down corner */
+/* Make indenting input elements in percents! */

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Laboratory work №1; Chesnokov A.</title>
         <link rel="stylesheet" href="style.css">
-        <script defer src="/scripts/acceptor.js"></script>
+        <link rel="shortcut icon" href="images/gosling-face.ico" type="image/x-icon">
     </head>
     <body>
         <!-- create cookie :3 -->
@@ -25,23 +25,21 @@
         <section>
             <div class="section-coordinate">
                 Coordinate Plane
-                <div class="section-form-r">
-                    <span style="margin-right: 75%;">Select R coordinate</span> 
-                    <form style="margin-top: 1%;
-                    margin-right: 75%;" id="rform" method="POST">
-                        <input type="radio" id="r1" name="radius" value="1" required>
-                        <label for="r1">1</label>
-                        <input type="radio" id="r2" name="radius" value="2" required>
-                        <label for="r2">2</label>
-                        <input type="radio" id="r3" name="radius" value="3" required>
-                        <label for="r3">3</label>
-                        <input type="radio" id="r4" name="radius" value="4" required>
-                        <label for="r4">4</label>
-                        <input type="radio" id="r5" name="radius" value="5" required>
-                        <label for="r5">5</label>
-                        <div style="margin: 15%;">
-                            <form id="xyform" method="POST">
-                                <label for="x-coordinate">Select 'X' coordinate</label> <br><br>
+                <div style="margin-right: 75%;">
+                        <div style="margin: 11%">
+                            <form id="form" method="POST">
+                                <span>Select 'R' coordinate</span> <br> 
+                                <input type="radio" id="r1" name="radius" value="1" required>
+                                <label for="r1">1</label>
+                                <input type="radio" id="r2" name="radius" value="2" required>
+                                <label for="r2">2</label>
+                                <input type="radio" id="r3" name="radius" value="3" required>
+                                <label for="r3">3</label>
+                                <input type="radio" id="r4" name="radius" value="4" required>
+                                <label for="r4">4</label>
+                                <input type="radio" id="r5" name="radius" value="5" required>
+                                <label for="r5">5</label> <br> <br>
+                                <label for="xcoord ">Select 'X' coordinate</label> <br><br>
                                 <input type="radio" id="x1" name="xcoord" value="-5" required>
                                 <label for="x1">-5</label>
                                 <input type="radio" id="x2" name="xcoord" value="-4" required>
@@ -61,17 +59,17 @@
                                 <input type="radio" id="x9" name="xcoord" value="3" required>
                                 <label for="x9">3</label> <br><br><br>
                                 <label for="ycoord">Enter 'Y' coordinate</label> <br><br>
-                                <input type="text" name="ycoord" maxlength="8" required> <br><br>
-                                <input type="submit" value="Send nudes!"/>
+                                <input type="text" id="ycoord" maxlength="8" required> <br><br>
+                                <button type="submit">Send Nudes!</button>
                             </form>
                         </div>
-                    </form>
+                        <div id="error"></div>
                 </div>
                 <div style="margin: -24%">
             <img class="task" src="images/task.png" alt="task" style="border-radius: 50%; background: rgba(255, 255, 255, .6); 
             background-size: contain;">
         </div>
-        <div style="margin-left: 75%; margin-top: 2%; font-size: small;">Hit Detection
+        <div style="margin-left: 75%; margin-top: 1%; font-size: small;">Hit Detection
             <img src="images/waiting.gif" alt="no data entered" style="margin-top: 10%;" width="200" height="200">
         </div>
             
@@ -85,6 +83,7 @@
         <section class="coordinate-table">
             <br>
             <div>Coordinate Hit Table</span>
+             <script defer src="/scripts/acceptor.js"></script>
         </section>
     </body>
 </html>

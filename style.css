@@ -5,7 +5,7 @@
 /* make the titles pretty */
 body {
     font-family: 'Press Start 2P', cursive;
-    background-image: url(images/drive_background.webp), url(images/second_gosling_background.png);
+    background-image: url(images/drive_background.webp);
     background-position: top, bottom;
     background-attachment: fixed;
     background-color: slategray;
@@ -52,8 +52,15 @@ section {
     
 }
 
-.section-form-r{
+form {
     font-size: small;
+}
+
+#error {
+    font-size: xx-small;
+    position: absolute;
+    margin-left: 3.5%;
+    margin-bottom: 3%;
 }
 
 input:invalid {

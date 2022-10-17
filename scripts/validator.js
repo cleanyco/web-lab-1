@@ -1,79 +1,57 @@
-var x = document.getElementById('xcoord')
-//FIXME
-var y = document.getElementById('ycoord')
-var r = document.getElementById('radius')
+const x = document.querySelector('input[name="xcoord"]:checked').value
+const r = document.querySelector('input[name="rcoord"]:checked').value 
+let yCoord = undefined 
 const form = document.getElementById('form')
-var errorElement = document.getElementById('error')
-var successMessage = 'You right!'
-//FIXME
-const regexDifferentBase = new RegExp('\s*(0|0x|e|0b|0B)[0-9].*\s*');
-const regexStartsWithDot = new RegExp('\s*\.\d+\s*');
-const regexEndsWithDot = new RegExp('\s*\d+\.\s*');
-// const regexCommaInTheNumber = '\s*\d+,\d*\s*'
+const errorElement = document.getElementById('error');
 
-//FIXME print only one error message (?)
-function validateForm(y) {
-    form.addEventListener('submit', (e => {
-        e.preventDefault()
-        let message = ''
+function check_y() {
+    let valid = false;
 
-        // if (yNumeric == null) {
-        //     messages.push('Number cannot be null!')
-        //     errorElement.innerText = messages.join(', ')
-        // }
+    const yElement = document.getElementById('ycoord').value;
+    const y = yElement.replace(',', '.').trim();
+    if (isNaN(y) || isNaN(parseFloat(y))) {
+        alert('Invalid input!')
+    } else if (parseFloat(y) < -5 || parseFloat(y) > 5) {
+        alert('Please enter a number between -5 and 5')
+        valid = false;
+    } else {
+        yCoord = y
+        valid = true;
+    } 
+    return valid;
+}
 
-        if (regexDifferentBase.test(y.value)) {
-            message = 'Required input in decimal!'
-            errorElement.innerText = message
-            return false
+function sendPost() {
+    $.ajax({
+        url: 'handler.php',
+        method: 'post',
+        dataType: 'json',
+        data: {
+            x: x,
+            y: yCoord,
+            r: r
+        },
+        success: function() {
+            alert('Запрос был отправлен!')
+        },
+        error: function() {
+            alert('Запрос не был отправлен!')
         }
-        debugger
+    });
+}
 
-        if (regexStartsWithDot.test(y.value) || regexEndsWithDot.test(y.value)) {
-            message = 'Invalid input of float number!'
-            errorElement.innerText = message;
-            return false;
-        }
-        // if (y.value.match(regexCommaInTheNumber)) {
-        //     message = 'Use a dot instead of a comma!'
-        //     errorElement.innerText = message
-
-        // }
-
-        const yNumeric = Number(y.value.trim());
-        debugger
-
-        if (Number.isNaN(yNumeric)) {
-            message = 'Invalid input!'
-            errorElement.innerText = message
-            return false
-        }
-
-
-        //FIXME check should be at the end
-        if (yNumeric > 5 || yNumeric < -5) {
-            message = 'Number out of range!'
-            errorElement.innerText = message
-            return false
-        }
-        
-        successMessage.innerText;
-        return true
-        // you cannot use a comma instead of a period, the number cannot start from zero, 
-    //         // there should not be extra characters, you need to allow spaces at the beginning and end, but prohibit them in the middle
-    }))
-} 
-    
-    var canSend = validateForm(y);
-    debugger       
-     if (canSend) {
-        var coordinates = {
-            xCoord: x,
-            yCoord: y,
-             rRadius: r
-        }
-                  var request = new XMLHttpRequest()
-        request.open('POST', scripts/handler.php)
-        request.send(JSON.stringify(coordinates))
-        request.responseType = 'json'
-        }
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    if (check_y()) {
+        // var img = document.createElement("img");
+        // img.src = "images/yep.gif";
+        // var src = document.getElementById("header");
+        // src.appendChild(img);
+        sendPost()
+    } else {
+        // var img = document.createElement("img");
+        // img.src = "images/yep.gif";
+        // var src = document.getElementById("header");
+        // src.appendChild(img);
+    }
+})

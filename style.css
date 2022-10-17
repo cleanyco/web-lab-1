@@ -72,7 +72,7 @@ input:valid {
 }
 
 .task {
-    bottom: 50px;
+    bottom: 25px;
 }
 
 form {
@@ -106,11 +106,6 @@ fieldset {
 
 }
 
-audio {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-}
 
 /* Do inscription ITMO in retrowave style in the right down corner */
 /* Make indenting input elements in percents! */

@@ -49,7 +49,7 @@ section {
     font-size: 17px;
     text-align: center;   
     display: block; 
-    
+    position: static;
 }
 
 form {
@@ -72,7 +72,9 @@ input:valid {
 }
 
 .task {
-    bottom: 25px;
+    position: absolute;
+    right: 630px;
+    bottom: 565px;
 }
 
 form {

@@ -7,6 +7,7 @@ $(function() {
 //fixme можно вводить начиная с нуля
 //fixme сделать все требования по наследованию элементов
 //fixme проверить инъекцию
+//fixme сделать валидацию в пэхэпэ
     function check_y() {
         let valid;
         const startsWithZero = new RegExp("0+\\d+");

@@ -1,0 +1,131 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+/* TODO ask about cursive font */
+/* fix the blur of background */
+/* make the titles pretty */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-image: url(images/drive_background.webp);
+    background-position: top, bottom;
+    background-attachment: fixed;
+    background-color: slategray;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+
+}
+
+header {
+    overflow: hidden;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .6);
+    /* justify-content: center; */
+    height: 128px;
+    background-size: contain;
+}
+
+/* FIXME make font colorful + make font size numeric value */
+.header-info {
+    font-size:large;
+    line-height: 30px;
+    position: absolute;
+    top: 23px;
+    left: 190px;
+}
+
+section {
+    overflow: hidden;
+    margin: 65px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .6);
+    background-size: contain;
+    height: 440px;
+    width: 1300px;
+}
+
+#result-table {
+    margin-top: 50px;
+    margin-left: 145px;
+    font-size: smaller;
+    overflow-y: scroll;
+}
+
+td {
+    padding: 0 15px;
+    border: solid 2px gray;
+    overflow-y: scroll;
+}
+
+
+.section-coordinate{
+    margin: 7px;
+    font-size: 17px;
+    text-align: center;   
+    display: block; 
+    
+}
+
+form {
+    font-size: small;
+}
+
+#error {
+    font-size: xx-small;
+    position: absolute;
+    margin-left: 3.5%;
+    margin-bottom: 3%;
+}
+
+input:invalid {
+    border: 2px dashed red;
+}
+
+input:valid {
+    border: 2px solid black;
+}
+
+.task {
+    bottom: 680px;
+    left: 620px;
+    position: absolute;
+}
+
+form {
+    margin-top: 5%;
+    margin-right: 3%;
+}
+
+.coordinate-table {
+    overflow: hidden;
+    text-align: center;
+    margin: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .6);
+    background-size: contain;
+    height: 400px;
+    width: 900px;
+}
+
+legend {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+
+}
+
+a::before{
+    content: "♥ ";
+}
+
+a::after {
+    content: " ♥";
+}

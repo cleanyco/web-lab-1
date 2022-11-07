@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Laboratory work №1; Chesnokov A.</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="images/gosling-face.ico" type="image/x-icon">
+    </head>
+    <body>
+        
+        <!--Возможно, здесь нужен fix-->
+        <!-- FIXME decrease character spacing -->
+        <!-- everything slides when zooming the page -->
+        <!-- change the message about the mandatory completion of the form -->
+        <header>
+            <img src="images/gosling_avatar.jpg" alt="avatar" width="175" height="128">
+            <div class="header-info">
+                Full Name: Chesnokov Arkadii <br>
+                Group: P32111 <br>
+                Variant: 1420 
+            </div>
+        </header>
+        <!-- Make indents in percents! -->
+        <!-- Print message about invalid input -->
+        <section>
+            <div class="section-coordinate">
+                Coordinate Plane
+                <img class="task" src="images/task.png" alt="task" style="border-radius: 50%; background: rgba(255, 255, 255, .6);
+            background-size: contain;">
+                <div style="margin-right: 75%;">
+                        <div style="margin: 11%">
+                            <form id="form" method="POST">
+                                <span>Select 'R' coordinate</span> <br> 
+                                <input type="radio" id="r1" name="rcoord" value="1" required>
+                                <label for="r1">1</label>
+                                <input type="radio" id="r2" name="rcoord" value="2" required>
+                                <label for="r2">2</label>
+                                <input type="radio" id="r3" name="rcoord" value="3" required>
+                                <label for="r3">3</label>
+                                <input type="radio" id="r4" name="rcoord" value="4" required>
+                                <label for="r4">4</label>
+                                <input type="radio" id="r5" name="rcoord" value="5" required>
+                                <label for="r5">5</label> <br> <br>
+                                Select 'X' coordinate<br><br>
+                                <label for="x1">-5</label>
+                                <input type="radio" id="x1" name="xcoord" value="-5" required>
+                                <label for="x2">-4</label>
+                                <input type="radio" id="x2" name="xcoord" value="-4" required>
+                                <label for="x3">-3</label>
+                                <input type="radio" id="x3" name="xcoord" value="-3" required>
+                                <label for="x4">-2</label>
+                                <input type="radio" id="x4" name="xcoord" value="-2" required>
+                                <label for="x5">-1</label>
+                                <input type="radio" id="x5" name="xcoord" value="-1" required>
+                                <label for="x6">0</label>
+                                <input type="radio" id="x6" name="xcoord" value="0" required>
+                                <label for="x7">1</label>
+                                <input type="radio" id="x7" name="xcoord" value="1" required>
+                                <label for="x8">2</label>
+                                <input type="radio" id="x8" name="xcoord" value="2" required>
+                                <label for="x9">3</label>
+                                <input type="radio" id="x9" name="xcoord" value="3" required>
+                                <br><br>
+                                <label for="ycoord">Enter 'Y' coordinate</label> <br><br>
+                                <input type="text" id="ycoord" maxlength="8" required> <br><br>
+                                <button type="submit">Send Nudes!</button>
+                            </form>
+                        </div>
+                        <div id="error"></div>
+                </div>`
+                </div>
+        <div style="margin-left: 75%; bottom: 690px; left: 0px; font-size: small; position: absolute">Has it been sent?
+            <img src="images/waiting.gif" alt="no data entered" style="margin-top: 10%;" width="200" height="200">
+        </div>
+        </section>
+        <script defer src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<!--        fixme сделать путь с точкой для se.ifmo.ru-->
+        <script defer src="/scripts/validator.js"></script>
+        <div class="coordinate-table" style="overflow-y: scroll">
+            <br>
+            <div>Coordinate Hit Table</div>
+            <table id="result-table">
+                <tr>
+                    <td>x</td>
+                    <td>y</td>
+                    <td>r</td>
+                    <td>curtime</td>
+                    <td>exectime</td>
+                    <td>hitres</td>
+                </tr>
+            </table>
+        </div>
+        <a style="font-family: 'Times New Roman'; font-size: smaller; color: powderblue;" href="https://github.com/grxuau">Мой GitHub</a>
+    </body>
+</html>

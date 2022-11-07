@@ -2,7 +2,12 @@
 
 function validateX($xVal): bool
 {
-    return isset($xVal);
+    if (!($xVal > -6) || !($xVal < 4) && !isset($xVal)) {
+        echo 'Invalid input x';
+        return false;
+    } else {
+        return true;
+    }
 }
 
 function validateY($yVal): bool
@@ -19,7 +24,12 @@ function validateY($yVal): bool
 
 function validateR($rVal): bool
 {
-    return isset($rVal);
+    if (!($rVal > -6) || !($rVal < 4) && !isset($rVal)) {
+        echo 'Invalid input r';
+        return false;
+    } else {
+        return true;
+    }
 }
 
 function validateForm($xVal, $yVal, $rVal): bool
@@ -60,7 +70,7 @@ $timezoneOffset = $_POST['date'];
 
 $isValid = validateForm($xVal, $yVal, $rVal);
 $converted_isValid = $isValid ? 'true' : 'false';
-$isHit = $isValid ? checkHit($xVal, $yVal, $rVal) : 'put dispenser';
+$isHit = $isValid ? checkHit($xVal, $yVal, $rVal) : 'michael myers with red tombstone';
 $converted_isHit = $isHit ? 'true' : 'false';
 
 $currentTime = date('H:i:s', time()-$timezoneOffset*60);

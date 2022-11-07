@@ -8,6 +8,8 @@ $(function() {
 //fixme сделать все требования по наследованию элементов
 //fixme проверить инъекцию
 //fixme сделать валидацию в пэхэпэ
+//fixme баг одной из регулярок (ПОФИКСИТЬ ВЕЗДЕ)
+//fixme сделать чтобы таблица генерировалась на новой странице
     function check_y() {
         let valid;
         const startsWithZero = new RegExp("0+\\d+");
@@ -44,7 +46,7 @@ $(function() {
             alert('Invalid input!')
             valid = false;
         } else if (parseFloat(x) < -5 || parseFloat(x) > 3) {
-            alert('Please enter a number between -5 and 5')
+            alert('Please enter a number between -5 and 3')
             valid = false;
         } else if (startsWithZero.test(x)){
             alert('Number cannot starts with zero!')
@@ -69,7 +71,7 @@ $(function() {
             alert('Invalid input!')
             valid = false;
         } else if (parseFloat(r) < -5 || parseFloat(r) > 3) {
-            alert('Please enter a number between -5 and 5')
+            alert('Please enter a number between 1 and 5')
             valid = false;
         } else if (startsWithZero.test(r)){
             alert('Number cannot starts with zero!')
@@ -97,12 +99,8 @@ $(function() {
                 date: new Date().getTimezoneOffset()
             },
             dataType: 'json',
-            // beforeSend: function() {
-            //     $('.button').attr('disabled', 'disabled');
-            // },
             success: function(data) {
-                // $('.button').attr('disabled', false);
-                if (check_y() && check_y() && check_r()) {
+                if (data.validate) {
                     newRow = '<tr>';
                     newRow += '<td>' + data.xval + '</td>';
                     newRow += '<td>' + data.yval + '</td>';

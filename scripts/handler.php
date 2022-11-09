@@ -2,12 +2,11 @@
 
 function validateX($xVal): bool
 {
-    if (!($xVal > -6) || !($xVal < 4) && !isset($xVal)) {
-        echo 'Invalid input x';
-        return false;
-    } else {
+   $arr = array("-5", "-4", "-3", "-2", "-1", "0", "1", "2", "3");
+    if (in_array($xVal, $arr)) {
         return true;
     }
+   return false;
 }
 //добавить и сюда регулярки
 function validateY($yVal): bool
@@ -19,17 +18,24 @@ function validateY($yVal): bool
         return false;
 
     $numY = str_replace(',', '.', $yVal);
-    return is_numeric($numY) && $numY >= $Y_MIN && $numY <= $Y_MAX;
+
+    $startsWithZero = '^0+\\d+$';
+    $numberSystems = '(0x|0o|0b)\d*';
+
+    if (!preg_match($startsWithZero, $numY) && !preg_match($numberSystems, $numY)) {
+        return is_numeric($numY) && $numY >= $Y_MIN && $numY <= $Y_MAX;
+    } else {
+        return false;
+    }
 }
 
 function validateR($rVal): bool
 {
-    if (!($rVal > -6) || !($rVal < 4) && !isset($rVal)) {
-        echo 'Invalid input r';
-        return false;
-    } else {
+    $arr = array("1", "2", "3", "4", "5");
+    if (in_array($rVal, $arr)) {
         return true;
     }
+    return false;
 }
 
 function validateForm($xVal, $yVal, $rVal): bool

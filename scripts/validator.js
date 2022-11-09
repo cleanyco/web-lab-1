@@ -10,12 +10,22 @@ $(function() {
 //fixme сделать валидацию в пэхэпэ
 //fixme баг одной из регулярок (ПОФИКСИТЬ ВЕЗДЕ)
 //fixme сделать чтобы таблица генерировалась на новой странице
+    //fixme число типа 0.00002 не правильно обрабатывает
+    //fixme убрать ограничение на ввод количества символов
+    //fixme возможно сделать округление
+
     function check_y() {
         let valid;
-        const startsWithZero = new RegExp("0+\\d+");
+        const startsWithZero = new RegExp("^0+\\d+$");
         const numberSystems = new RegExp("(0x|0o|0b)\d*")
         const yElement = document.getElementById('ycoord').value
         const y = yElement.replace(',', '.').trim();
+
+        if (y.length > 14) {
+            alert('Input is too long! Max length: 14')
+            valid = false;
+        }
+
         if (isNaN(y) || isNaN(parseFloat(y))) {
             alert('Invalid input!')
             valid = false;
@@ -37,11 +47,17 @@ $(function() {
 
     function check_x() {
         let valid;
-        const startsWithZero = new RegExp("0+\\d+");
+        const startsWithZero = new RegExp("^0+\\d+$");
         const numberSystems = new RegExp("(0x|0o|0b)\d*")
         //fixme
         const xElement = document.querySelector('input[name="xcoord"]:checked').value
         const x = xElement.replace(',', '.').trim();
+
+        if (x.length > 14) {
+            alert('Input is too long! Max length: 14')
+            valid = false;
+        }
+
         if (isNaN(x) || isNaN(parseFloat(x))) {
             alert('Invalid input!')
             valid = false;
@@ -63,10 +79,16 @@ $(function() {
 
     function check_r() {
         let valid;
-        const startsWithZero = new RegExp("0+\\d+");
+        const startsWithZero = new RegExp("^0+\\d+$");
         const numberSystems = new RegExp("(0x|0o|0b)\d*")
         const rElement = document.querySelector('input[name="rcoord"]:checked').value
         const r = rElement.replace(',', '.').trim();
+
+        if (r.length > 14) {
+            alert('Input is too long! Max length: 14')
+            valid = false;
+        }
+
         if (isNaN(r) || isNaN(parseFloat(r))) {
             alert('Invalid input!')
             valid = false;
@@ -111,7 +133,7 @@ $(function() {
                     $('#result-table').append(newRow);
                 }
             },
-            error: function(jqXHR, textStatus) {
+            error: function(jqXHR) {
                 alert(`Запрос не был отправлен! Причина: ${jqXHR.statusText}`)
             }
         });

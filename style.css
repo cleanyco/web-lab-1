@@ -1,8 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+/*TODO убрать импорт и загрузить этот шрифт*/
 
-/* TODO ask about cursive font */
-/* fix the blur of background */
-/* make the titles pretty */
 body {
     font-family: 'Press Start 2P', cursive;
     background-image: url(images/drive_background.webp);

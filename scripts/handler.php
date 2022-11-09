@@ -9,7 +9,7 @@ function validateX($xVal): bool
         return true;
     }
 }
-
+//добавить и сюда регулярки
 function validateY($yVal): bool
 {
     $Y_MIN = -5;

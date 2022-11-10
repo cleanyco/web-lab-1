@@ -4,7 +4,6 @@ $(function() {
     let rCoord = undefined
     const form = document.getElementById('form')
 
-//fixme можно вводить начиная с нуля
 //fixme сделать все требования по наследованию элементов
 //fixme проверить инъекцию
 //fixme сделать валидацию в пэхэпэ
@@ -28,15 +27,17 @@ $(function() {
             alert('Input is too long! Max length: 14')
             valid = false;
         }
-
+        //fixme обдумать порядок регулярок
+        //fixme 00000 - numbers cannot start with zero
+        //сначала фиксим для y, потом внедряем для всего остального
         if (isNaN(y) || isNaN(parseFloat(y))) {
             alert('Invalid input!')
             valid = false;
-        } else if (parseFloat(y) < -5 || parseFloat(y) > 5) {
-            alert('Please enter a number between -5 and 5')
-            valid = false;
         } else if (startsWithZero.test(y)){
             alert('Number cannot starts with zero!')
+            valid = false;
+        } else if (parseFloat(y) < -5 || parseFloat(y) > 5) {
+            alert('Please enter a number between -5 and 5')
             valid = false;
         } else if (numberSystems.test(y)) {
             alert("You can only enter numbers in decimal notation!");

@@ -19,8 +19,11 @@ function validateY($yVal): bool
 
     $numY = str_replace(',', '.', $yVal);
 
-    $startsWithZero = '^0+\\d+$';
-    $numberSystems = '(0x|0o|0b)\d*';
+    $startsWithZero = '/^0+\\d+$/';
+    //fixme возможно нужно это пофиксить (неправильная логика регулярки)
+    //TODO сделать округление чисел по типу 1.00000000
+    //fixme не пропускает число 000010000, мол, слишком большое
+    $numberSystems = '/(0x|0o|0b)\d*/';
 
     if (!preg_match($startsWithZero, $numY) && !preg_match($numberSystems, $numY)) {
         return is_numeric($numY) && $numY >= $Y_MIN && $numY <= $Y_MAX;

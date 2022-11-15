@@ -1,3 +1,5 @@
+"use strict";
+
 $(function() {
     let yCoord = undefined
     const form = document.getElementById('form')
@@ -15,9 +17,6 @@ $(function() {
             alert('Input is too long! Max length: 14')
             return false
         }
-        //fixme обдумать порядок регулярок
-        //fixme 00000 - numbers cannot start with zero
-        //сначала фиксим для y, потом внедряем для всего остального
         if (isNaN(y) || isNaN(parseFloat(y))) {
             alert('Invalid input!')
             valid = false;
@@ -76,6 +75,7 @@ $(function() {
         }
 
         return valid
+
     }
 
     function check_r() {
@@ -122,7 +122,7 @@ $(function() {
         const xVal = document.querySelector('input[name="xcoord"]:checked').value
         const rVal = document.querySelector('input[name="rcoord"]:checked').value
         $.ajax({
-            url: './scripts/keinajax-handler.php',
+            url: './scripts/handler.php',
             method: 'POST',
             data: {
                 x: xVal,
